@@ -1,6 +1,5 @@
 const graphql = require("graphql");
 const _ = require("lodash");
-const mongoose = require("mongoose");
 const Book = require("../models/book");
 const Author = require("../models/author");
 
@@ -13,15 +12,6 @@ const {
   GraphQLList,
   GraphQLNonNull,
 } = graphql;
-
-mongoose.connect(
-  "mongodb+srv://pranav:lk7znXSInfKYptGp@nextjs-mongo-sample.1lly5.mongodb.net/gql-gpr?retryWrites=true&w=majority",
-  { useNewUrlParser: true, useUnifiedTopology: true }
-);
-
-mongoose.connection.once("open", () => {
-  console.log("Connected to DB");
-});
 
 // var books = [
 //   { name: "Name of the Wind", genre: "Fantasy", id: "1", authorId: "1" },

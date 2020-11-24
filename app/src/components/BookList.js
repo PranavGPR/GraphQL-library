@@ -1,4 +1,16 @@
-export default function BookList() {
+import { gql } from "apollo-boost";
+import { graphql } from "react-apollo";
+
+const getBooksQuery = gql`
+  {
+    books {
+      name
+      id
+    }
+  }
+`;
+
+function BookList() {
   return (
     <div>
       <ul id='book-list'>
@@ -7,3 +19,5 @@ export default function BookList() {
     </div>
   );
 }
+
+export default graphql(getBooksQuery)(BookList);
