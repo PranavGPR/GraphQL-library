@@ -1,6 +1,6 @@
 export default function BookList() {
   return (
-    <div id='main'>
+    <div>
       <ul id='book-list'>
         <li>Book name</li>
       </ul>
